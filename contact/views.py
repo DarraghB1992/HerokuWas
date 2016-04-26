@@ -11,7 +11,7 @@ def contact(request):
     if request.method == 'POST':
         form = ContactView(request.POST)
         if form.is_valid():
-            email = EmailMessage(subject=request.POST.get('topic'), body=request.POST.get('message'),
+            email = EmailMessage(subject=request.POST.get('topic', 'email'), body=request.POST.get('message'),
                                  from_email=request.POST.get('email'), to=["darragh1992@gmail.com"])
             email.send()
             my_form = form.save(commit=False)
