@@ -21,6 +21,7 @@ from paypal_store import views as paypal_views
 from products import views as product_views
 from magazines import views as magazine_views
 from accounts.views import register, profile, login, logout, cancel_subscription, subscriptions_webhook
+from contact.views import contact
 from threads import views as forum_views
 from django.contrib.staticfiles import views as static_views
 
@@ -35,6 +36,8 @@ urlpatterns = [
     url(r'^profile/$', profile, name='profile'),
     url(r'^login/$', login, name='login'),
     url(r'^logout/$', logout, name='logout'),
+    url(r'^contact/$', contact, name='contact'),
+
 
     # Stripe URLS
     url(r'^cancel_subscription/$', cancel_subscription, name='cancel_subscription'),

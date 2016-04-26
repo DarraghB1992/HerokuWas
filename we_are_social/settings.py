@@ -104,15 +104,13 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'mydatabase',
-#     }
-# }
 
 DATABASES['default'] = dj_database_url.parse(
     "mysql://bebdeb3ac527d9:a48c7569@eu-cdbr-west-01.cleardb.com/heroku_f8339453c825e74")
+
+
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -169,3 +167,9 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_N35jP51CRqW4FKBMa8MAL1A4')
 SITE_URL = 'http://127.0.0.1:8000'
 PAYPAL_NOTIFY_URL = 'https://291e2d8f.ngrok.io/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'aaron@codeinstitute.net'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'darragh1992@gmail.com'
+EMAIL_HOST_PASSWORD = 'bredrhjhsexpcmvg'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
